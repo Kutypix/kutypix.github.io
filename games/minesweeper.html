@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Minesweeper</title>
+        <link rel="stylesheet" type="text/css" href="../css/minesweeper.css">
+        <link rel="icon" type="image/png" href="../img/minesweeper/other/favicon.ico"/>
+    </head>
+    <body>
+        <div id="title">Minesweeper</div>
+        <div id="cont">
+            <div id="menu" class="content">
+                <div id="play" class="button">Play</div>
+                <div id="rules" class="button">Rules</div>
+                <div id="hallOfFame" class="button">Hall of fame</div>
+            </div>
+            <div id="gameSection" class="content" style="display: none;">
+                <div id="beginner" class="button">Beginner</div>
+                <div id="intermediate" class="button">Intermediate</div>
+                <div id="expert" class="button">Expert</div>
+                <div id="custom" class="button">Custom</div>
+                <div id="customData">
+                    <div id="part1">
+                        <p class="params">Width :</p>
+                        <input type="number" id="customWidth" placeholder="8 - 30" min="8" max="30" name="width">
+                        <p class="params">Height :</p>
+                        <input type="number" id="customHeight" placeholder="8 - 24" min="8" max="24" name="height">
+                        <p class="params">Mines :</p>
+                        <input type="number" id="customMines" placeholder="10 - 667" min="10" max="667" name="mines">
+                    </div>
+                    <div id="part2">
+                        <p class="params" style="margin-right:8px;">
+                            Notice: For a board size W × H, the maximum mines number is (W-1) × (H-1), 
+                            ex. for a board with the size of 16 × 16 fields, the maximum number may be 15 × 15 = 225 mines.
+                        </p>
+                    </div>
+                </div>
+                <div id="backGame" class="button">Back to menu</div>
+            </div>
+            <div id="rulesSection" class="content" style="display: none;">
+                <p class="info">
+                    In Minesweeper, mines (that resemble naval mines in the classic theme) are scattered throughout a board, which is divided into cells. Cells have three states: uncovered, covered and flagged.
+                    A covered cell is blank and clickable, while an uncovered cell is exposed. Flagged cells are those marked by the player to indicate a potential mine location. 
+                </p>
+                </br>
+                <p class="info"> 
+                    A player left-clicks a cell to uncover it. If a player uncovers a mined cell, the game ends, as there is only 1 life per game. 
+                    Otherwise, the uncovered cells displays either a number, indicating the quantity of mines diagonally or orthogonally adjacent to it, or a blank tile (or "0"),
+                    and all adjacent non-mined cells will automatically be uncovered. Right-clicking on a cell will flag it, causing a flag to appear on it.
+                    lagged cells are still considered covered, and a player can click on them to uncover them, although typically they must first be unflagged with an additional right-click.
+                </p>
+                </br>
+                <p class="info">
+                    The first click in any game will never be a mine.
+                    To win the game, players must uncover all non-mine cells, at which point, the timer is stopped. Flagging all the mined cells is not required.
+                </p> 
+                <div id="backRules">Back to menu</div>
+            </div>
+            <div id="fameSection" class="content" style="display: none;">
+                <table>
+                    <tr id="tabHead">
+                        <td>Nr</td>
+                        <td>Name</td>
+                        <td>Time</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>---</td>
+                        <td>---</td>
+                    </tr>
+                </table>
+                <!-- <form>
+                    <input type="radio" class="mode" name="Beginner" value="Beginner">
+                    <input type="radio" class="mode" name="Intermediate" value="Intermediate">
+                    <input type="radio" class="mode" name="Expert" value="Expert">
+                    <input type="radio" class="mode" name="Custom" value="Custom">
+                </form> -->
+                <div id="backFame">Back to menu</div>
+            </div>
+            <div id="playground">
+                <div id="info">
+                    <div id="mines">
+                        <img id="hundreds1" class="leftInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                        <img id="dozens1" class="leftInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                        <img id="unity1" class="leftInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                    </div>
+                    <div id="face">
+                        <div id="emoji"></div>
+                    </div>
+                    <div id="time">
+                        <img id="unity2" class="rightInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                        <img id="dozens2" class="rightInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                        <img id="hundreds2" class="rightInfo" src="../img/minesweeper/timer/0.png" alt="0">
+                    </div>
+                </div>
+                <div id="board"></div>
+            </div>
+        </div>
+        <div id="footer">This web site was created by Michał Kutypa. All rights reserved !</div>
+
+        <!-- ================= skrypty w JS  ================= -->
+        <script src="../script/minesweeper.js"></script> 
+        <!-- ================= skrypty w JS  ================= -->
+    </body>
+</html>
