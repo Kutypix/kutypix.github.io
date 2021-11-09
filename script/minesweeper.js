@@ -105,6 +105,7 @@ function creatBoard(width,height){
                         if(countToWin==0)
                         {
                             clearInterval(interval);
+                            isGameOn = false;
                             emoji.style.backgroundImage = "url('../img/minesweeper/other/glasses.png')";
                             alert("You won!");
                         }             
